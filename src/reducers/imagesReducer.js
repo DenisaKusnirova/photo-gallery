@@ -27,6 +27,7 @@ export const imagesReducer = (state = {}, action) => {
           ...action.images
         ]
       }
+    default:
+      return state
   }
-  return state;
 }

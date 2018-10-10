@@ -5,7 +5,6 @@ import { connect } from 'react-redux'
 import { getImgUrl } from '../../api'
 import AddNewCategory from '../addNewCategory/AddNewCategory'
 import AddCategoryCard from '../addCategoryCard/AddCategoryCard'
-import { handleGetPhotosForGallery } from '../../actions/images'
 
 class Categories extends Component {
   state = {
@@ -56,6 +55,7 @@ class Categories extends Component {
           src={getImgUrl(this.state.currentBackground)}
           style={{ backgroundColor: '#7b7b7b'}}
           className="bcg-image"
+          alt="background"
         />
         <div className="gallery-flex">
           {!this.state.closed &&
@@ -88,7 +88,7 @@ const mapStateToProps = ({ galleries }) => {
   }
 }
 
-export default connect(mapStateToProps, { handleGetPhotosForGallery })(Categories)
+export default connect(mapStateToProps)(Categories)
 
 
 

@@ -20,7 +20,7 @@ class AddNewCategory extends Component {
     }))
     this.props.handleClose()
   }
-  
+
   render() {
     return (
       <div className="add-category-container">
@@ -29,14 +29,14 @@ class AddNewCategory extends Component {
           <div className="add-category-white-card">
             <h4>PRIDAŤ KATEGÓRIU</h4>
             <form onSubmit={this.onFormSubmit}>
-              <input 
+              <input
                 placeholder="ZADAJTE NÁZOV KATEGÓRIE"
                 value={this.state.category}
                 onChange={this.handleChange}
               />
               <button type="submit" className="add-category-btn">+ PRIDAŤ</button>
             </form>
-            <hr className="hr-new-category"/>
+            <hr className="hr-new-category" />
           </div>
         </div>
       </div>

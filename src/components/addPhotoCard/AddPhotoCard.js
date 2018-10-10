@@ -3,10 +3,9 @@ import './addPhotoCard.scss'
 
 const AddPhotoCard = (props) => {
   return (
-    <button className="add-photo-card" onClick={props.addPhoto}>
-      <img src={require('../../resources/camera-icon.png')} />
-      <p className="add-category-header">PRIDAŤ FOTKY</p>
-    </button>
+    <div className="card-add-photo" onClick={props.addPhoto}>
+      <img src={require('../../resources/add-photo.png')} alt="addphoto" />
+    </div>
   )
 }
 

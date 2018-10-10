@@ -7,7 +7,7 @@ import ProgressiveImage from 'react-progressive-image'
 import placeholder from '../../resources/placeholder.png'
 
 class Category extends Component {
-  state = {
+ state = {
     visible: false
   }
 
@@ -38,7 +38,7 @@ class Category extends Component {
         <Link to={`/${this.props.path}/`} className="link-to-category">
           {this.props.src && 
             <ProgressiveImage src={this.props.src} placeholder={placeholder}>
-              {src => <img src={src} alt="an image" />}
+              {src => <img src={src} alt="category" />}
             </ProgressiveImage>
           }
           <p className="category-title">{this.props.category}</p>

@@ -2,7 +2,6 @@ import {
   RECEIVE_GALLERIES,
   ADD_GALLERY,
   DELETE_CATEGORY,
-  DELETE_PHOTO,
 } from '../actions/galleries'
 
 export const galleriesReducer = (state = {}, action) => {
@@ -25,9 +24,9 @@ export const galleriesReducer = (state = {}, action) => {
          }
       }
     case DELETE_CATEGORY:
-      console.log("STATE:", state)
       const { [action.path]: {}, ...newState } = state
-      return newState    
-  }
-  return state;
+      return newState  
+    default:
+      return state  
+  } 
 }

@@ -2,37 +2,44 @@
   border: none;
 }
 
-.add-photo-card {
+.card-add-photo {
   width: 17.17vw;
-  margin-bottom: 42px;
-  border-radius: 4px;
+  height: 110%;
+  padding: 0.6%;
+  margin-left: 2%;
   border: 1.4px solid #d3d3d385;
+  cursor: pointer;
+  border-radius: 4px;
+  background-color: white;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: white;
-  margin-left: 2%;
 
-  @media only screen and (max-width: 1383px) {
-    width: 31.3%;
-    height: 177.03px;
-  }
+    @media only screen and (max-width: 1383px) {
+      width: 31.3%;
+    }
 
-  @media only screen and (max-width: 900px) {
-    width: 31.3%;
-  }
+    @media only screen and (max-width: 900px) {
+      width: 31.3%;
+    }
 
-  @media only screen and (max-width: 760px) {
-    width: 48%;
-  }
+    @media only screen and (max-width: 760px) {
+      width: 48%;
+      padding: 1%;
+    }
 
-  @media only screen and (max-width: 552px) {
-    width: 98%;
-  }
+    @media only screen and (max-width: 552px) {
+      width: 98%;
+    }
 
-  &:hover {
-    transform: translate(0, -10px);
-    transition: transform .4s ease-in-out;
-  }
+    img {
+      width: 100%;
+      background-position: center;
+    }
+}
+
+.card-add-photo:hover {
+  transform: translate(0, -10px);
+  transition: transform .4s ease-in-out;
+  cursor: pointer;
 }

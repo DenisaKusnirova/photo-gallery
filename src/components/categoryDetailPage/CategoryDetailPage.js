@@ -23,9 +23,9 @@ class CategoryDetailPage extends Component {
   getBackgroundImg = () => {
     const { images } = this.props.data
     if (images && images.length !== 0) {
-      return <img src={getImgUrl(images[0].fullpath)} className="bcg-image" />
+      return <img src={getImgUrl(images[0].fullpath)} className="bcg-image" alt="background" />
     }
-    return <div className="no-bcg-image"></div>;
+    return <div className="no-bcg-image"></div>
   }
 
   addNewCategory = (e) => {
@@ -70,7 +70,7 @@ class CategoryDetailPage extends Component {
     if (this.state.currentIndex > 0) {
       this.setState((prevState) => ({
         currentIndex: prevState.currentIndex - 1
-      })) 
+      }))
     }
   }
 
@@ -81,23 +81,23 @@ class CategoryDetailPage extends Component {
       }))
     }
   }
-  
+
   render() {
-    const { path, data} = this.props
+    const { path, data } = this.props
     const { currentIndex } = this.state
-    
+
     return (
       <div>
         {!this.state.closed && <AddNewPhoto path={path} handleClose={this.handleClose} />}
-        {!this.state.photoDetailClosed && 
-          <PhotoDetail 
+        {!this.state.photoDetailClosed &&
+          <PhotoDetail
             photoPath={
-              data.images[currentIndex] && 
-              getImgUrl(data.images[currentIndex].fullpath, 600, 400)
+              data.images[currentIndex] &&
+              getImgUrl(data.images[currentIndex].fullpath, 1200, 800)
             }
             renderPrevious={this.renderPreviousPhoto}
-            renderNext={this.renderNextPhoto} 
-            handleCloseDetail={this.handleCloseDetail} 
+            renderNext={this.renderNextPhoto}
+            handleCloseDetail={this.handleCloseDetail}
           />
         }
         {this.getBackgroundImg()}
@@ -105,14 +105,13 @@ class CategoryDetailPage extends Component {
           <Headers subheader={"← " + path.toUpperCase()} className="subheader-link" />
           <div className="gallery">
             <div className="gallery-flex">
-              { data.images && data.images.length > 0 &&
+              {data.images && data.images.length > 0 &&
                 data.images.map((item, index) => {
                   return (
                     <Photo
                       onClick={() => this.handleClick(index)}
                       src={getImgUrl(item.fullpath)}
                       key={item.path}
-                      photoSrc={getImgUrl(item.fullpath)}
                       category={path}
                       path={item.fullpath}
                     />

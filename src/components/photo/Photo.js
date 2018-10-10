@@ -37,7 +37,7 @@ class Photo extends Component {
        <div {...this.props}>
         {this.props.src &&
           <ProgressiveImage src={this.props.src} placeholder={placeholder}>
-            {src => <img src={src} alt="an image" />}
+            {src => <img src={src} alt="gallery jpg"/>}
           </ProgressiveImage>
         }
         </div>

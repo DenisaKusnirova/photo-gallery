@@ -11,15 +11,11 @@ $title-border:1.4px solid $light-gray;
       width: 31.3%;
     }
 
-    @media only screen and (max-width: 900px) {
-      width: 31.3%;
-    }
-
-    @media only screen and (max-width: 760px) {
+    @media only screen and (max-width: 1000px) {
       width: 48%;
     }
 
-    @media only screen and (max-width: 552px) {
+    @media only screen and (max-width: 650px) {
       width: 98%;
     }
 
@@ -63,7 +59,7 @@ $title-border:1.4px solid $light-gray;
 }
 
 .delete-button {
-  margin-left: 50%;
+  margin-left: 65%;
 
   button {
     background-color: transparent;
