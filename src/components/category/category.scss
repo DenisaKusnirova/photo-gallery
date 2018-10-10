@@ -59,7 +59,8 @@ $title-border:1.4px solid $light-gray;
 }
 
 .delete-button {
-  margin-left: 65%;
+  width: 100%;
+  text-align: right;
 
   button {
     background-color: transparent;

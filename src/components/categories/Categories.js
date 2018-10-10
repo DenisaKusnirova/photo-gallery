@@ -51,12 +51,14 @@ class Categories extends Component {
 
     return (
       <div>
-        <img
-          src={getImgUrl(this.state.currentBackground)}
-          style={{ backgroundColor: '#7b7b7b'}}
-          className="bcg-image"
-          alt="background"
-        />
+        <div className="bcg-image-wrapper">
+          <img
+            src={getImgUrl(this.state.currentBackground, 1200, 800)}
+            style={{ backgroundColor: '#7b7b7b'}}
+            className="bcg-image"
+            alt="background"
+          />
+        </div>
         <div className="gallery-flex">
           {!this.state.closed &&
             <AddNewCategory

@@ -1,4 +1,4 @@
-const api = 'http://api.programator.sk/'
+const api = 'https://api.programator.sk/'
 
 const headers = {
   'Accept': 'application/json'
@@ -34,7 +34,7 @@ export const deleteItem = (path) => {
 }
 
 export const getImgUrl = (path, width, height) => {
-  const size = (width && height) ? `${width}x${height}` : '240x150'
+  const size = width && height ? `${width}x${height}` : '240x150'
   return `${api}images/${size}/${path}`
 }
 
