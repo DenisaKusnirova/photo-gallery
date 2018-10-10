@@ -1,0 +1,32 @@
+.gallery-flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.link-to-category {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.bcg-image {
+  width: 100%;
+  height: 38vh;
+  object-fit: cover;
+  position: absolute;
+  top: -8px;
+  bottom: 0;
+  left: -8px;
+  right: 0;
+  z-index: -2;
+  filter: blur(5px) brightness(70%);
+  clip: rect(0px, 110%,0px);
+
+  @media screen and (max-width: 1024px) , screen and (max-height: 700px) {
+    height: 30vh;
+  }
+}

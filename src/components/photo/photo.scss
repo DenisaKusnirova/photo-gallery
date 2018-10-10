@@ -1,0 +1,40 @@
+.show-photo-detail-btn {
+  background-color: transparent;
+  border: none;
+}
+
+.card-photo {
+  width: 17.17vw;
+  margin-left: 2%;
+  margin-bottom: 20px;
+
+    @media only screen and (max-width: 1383px) {
+      width: 31.3%;
+    }
+
+    @media only screen and (max-width: 900px) {
+      width: 31.3%;
+    }
+
+    @media only screen and (max-width: 760px) {
+      width: 48%;
+    }
+
+    @media only screen and (max-width: 552px) {
+      width: 98%;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      background-size: cover;
+      background-position: center;
+      border-radius: 4px;
+    }
+}
+
+.card-photo:hover {
+  transform: translate(0, -10px);
+  transition: transform .4s ease-in-out;
+  cursor: pointer;
+}

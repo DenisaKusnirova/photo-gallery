@@ -1,0 +1,89 @@
+$light-gray: #d3d3d385;
+$font-color-gray: #333333bf;
+$title-border:1.4px solid $light-gray;
+
+.card {
+  width: 17.17vw;
+  margin-left: 2%;
+  margin-bottom: 42px;
+
+    @media only screen and (max-width: 1383px) {
+      width: 31.3%;
+    }
+
+    @media only screen and (max-width: 900px) {
+      width: 31.3%;
+    }
+
+    @media only screen and (max-width: 760px) {
+      width: 48%;
+    }
+
+    @media only screen and (max-width: 552px) {
+      width: 98%;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      background-size: cover;
+      background-position: center;
+    }
+}
+
+.card:hover {
+  transform: translate(0, -10px);
+  transition: transform .4s ease-in-out;
+  cursor: pointer;
+}
+
+.category-title {
+  padding: 15px;
+  text-align: center;
+  border-bottom: $title-border; 
+  border-right: $title-border;
+  border-left: $title-border;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  color: $font-color-gray;
+  font-size: 1.1vw;
+  font-weight: 600;
+  height: 20%;
+  background-color: white;
+
+  @media only screen and (max-width: 1000px) {
+    font-size: 1.5vw;
+  }
+
+  @media only screen and (max-width: 600px) {
+    font-size: 2.5vw;
+  }
+}
+
+.delete-button {
+  margin-left: 50%;
+
+  button {
+    background-color: transparent;
+    border: none;
+    color: $font-color-gray;
+    font-weight: 600;
+  }
+}
+
+.pics-num {
+  margin-bottom: 35%;
+  color: #33333359;
+  font-weight: 500;
+  font-size: 1;
+
+  @media only screen and (max-width: 1000px) {
+    font-size: 1.5vw;
+  }
+
+  @media only screen and (max-width: 600px) {
+    font-size: 2.5vw;
+  }
+}

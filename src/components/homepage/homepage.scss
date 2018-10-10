@@ -1,0 +1,41 @@
+.gallery {
+  padding-top: 10vh;
+  padding-bottom: 20%;
+  z-index: 1;
+  margin-left: -2%;
+
+  @media only screen and (max-width: 2000px) {
+    padding-top: 8vh;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    padding-top: 6vh;
+  }
+
+  @media only screen and (max-width: 500px) {
+    padding-top: 0;
+  }
+}
+
+
+.homepage-container {
+  width: 74%;
+  margin-left: 13%;
+}
+
+.webdesign {
+  color: #c1c1c1;
+  padding-top: 20px;
+  font-weight: 600;
+  text-align: left;
+  font-size: 1vw;
+  margin-left: 2%;
+
+  @media only screen and (max-width: 1000px) {
+    font-size: 1.5vw;
+  }
+
+  @media only screen and (max-width: 500px) {
+    font-size: 3vw;
+  }
+}
