@@ -16,8 +16,35 @@ class CategoryDetailPage extends Component {
     currentIndex: 0
   }
 
+  closeDetail = (e) => {
+    if (e.keyCode === 27) {
+      this.handleCloseDetail()
+    }
+  }
+
+  nextPhoto = (e) => {
+    if (e.keyCode === 39) {
+      this.renderNextPhoto()
+    }
+  }
+
+  previousPhoto = (e) => {
+    if (e.keyCode === 37) {
+      this.renderPreviousPhoto()
+    }
+  }
+
   componentDidMount() {
     this.props.handleGetPhotosForGallery(this.props.path)
+    document.addEventListener("keydown", this.closeDetail, false)
+    document.addEventListener("keydown", this.nextPhoto, false)
+    document.addEventListener("keydown", this.previousPhoto, false)
+  }
+
+  componentWillUnmount(){
+    document.removeEventListener("keydown", this.escFunction, false)
+    document.removeEventListener("keydown", this.nextPhoto, false)
+    document.removeEventListener("keydown", this.previousPhoto, false)
   }
 
   getBackgroundImg = () => {

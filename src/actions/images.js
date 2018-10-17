@@ -17,7 +17,6 @@ export const getPhotosForGallery = (photos) => ({
 
 export const handleGetPhotosForGallery = (path) => {
   return (dispatch) => {
-    dispatch(galleryImagesLoading())
     return getPhotos(path)
       .then((photos) => dispatch(getPhotosForGallery(photos)))
   }
