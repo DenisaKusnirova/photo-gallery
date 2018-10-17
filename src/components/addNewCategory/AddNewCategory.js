@@ -4,7 +4,10 @@ import { handleAddGallery } from '../../actions/galleries'
 import { connect } from 'react-redux'
 
 class AddNewCategory extends Component {
-  state = { category: '' }
+  state = {
+    category: '',
+    error: ''
+  }
 
   handleChange = (event) => {
     const category = event.target.value
@@ -13,12 +16,30 @@ class AddNewCategory extends Component {
 
   onFormSubmit = (e) => {
     e.preventDefault()
-    console.log(this.state.category)
+
+    const { category } = this.state
+    const { galleries } = this.props
+
+    if (category === '') {
+      this.setState(() => ({
+        error: 'Please enter a category name.'
+      }))
+      return
+    }
+
+    if (galleries[category]) {
+      this.setState(() => ({
+        error: 'Please choose a different category name.'
+      }))
+      return
+    }
+
     this.props.handleAddGallery(this.state.category.replace(/\//g, ''))
     this.setState(() => ({
       category: ''
     }))
     this.props.handleClose()
+
   }
 
   render() {
@@ -37,6 +58,7 @@ class AddNewCategory extends Component {
               <button type="submit" className="add-category-btn">+ PRIDAŤ</button>
             </form>
             <hr className="hr-new-category" />
+            {this.state.error && <p className="error-msg">{this.state.error}</p>}
           </div>
         </div>
       </div>
@@ -44,4 +66,10 @@ class AddNewCategory extends Component {
   }
 }
 
-export default connect(null, { handleAddGallery })(AddNewCategory)
+const mapStateToProps = ({ galleries }) => {
+  return {
+    galleries
+  }
+}
+
+export default connect(mapStateToProps, { handleAddGallery })(AddNewCategory)
