@@ -10,21 +10,21 @@ export const imagesReducer = (state = {}, action) => {
     case GET_PHOTOS_FOR_GALLERY:
       return {
         ...state,
-        ...action.photos
+        [action.photos.gallery.name]: action.photos.images
       }
     case GALLERY_IMAGES_LOADING:
-      return {}
+      return state
     case DELETE_PHOTO:
       return {
         ...state,
-        images: state.images.filter((index) => index.fullpath !== action.path)
+        [action.category]: state[action.category].filter((index) => index.fullpath !== action.path)
       }
     case ADD_PHOTO:
       return {
         ...state,
-        images: [
-          ...state.images,
-          ...action.images
+        [action.category]: [
+          ...state[action.category],
+          ...action.image
         ]
       }
     default:

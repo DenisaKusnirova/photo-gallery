@@ -24,28 +24,30 @@ export const handleGetPhotosForGallery = (path) => {
 }
 
 // DELETE PHOTO
-export const deletePhoto = (path) => ({
+export const deletePhoto = (path, category) => ({
   type: DELETE_PHOTO,
-  path
+  path,
+  category
 })
 
-export const handleDeletePhoto = (path) => {
+export const handleDeletePhoto = (path, category) => {
   return (dispatch) => {
     return deleteItem(path)
-      .then(() => dispatch(deletePhoto(path)))
+      .then(() => dispatch(deletePhoto(path, category)))
   }
 }
 
 // ADD PHOTO
-export const addPhoto = (images) => ({
+export const addPhoto = (image, category) => ({
   type: ADD_PHOTO,
-  images
+  image,
+  category
 })
 
-export const handleAddPhoto = (image, path) => {
+export const handleAddPhoto = (image, path, category) => {
   return (dispatch) => {
-    dispatch(galleryImagesLoading())
+    galleryImagesLoading()
     return addNewPhoto(image, path)
-      .then((response) => dispatch(addPhoto(response.uploaded)))
+      .then((response) => dispatch(addPhoto(response.uploaded, category)))
   }
 }

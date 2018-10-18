@@ -42,7 +42,7 @@ class Categories extends Component {
   }
 
   render() {
-    const { galleries } = this.props
+    const { galleries } = this.props  
 
     if (!this.state.currentBackground && Object.keys(this.props.galleries).length !== 0) {
       const key = Object.keys(this.props.galleries)[0]
@@ -86,7 +86,7 @@ class Categories extends Component {
 
 const mapStateToProps = ({ galleries }) => {
   return {
-    galleries,
+    galleries
   }
 }
 

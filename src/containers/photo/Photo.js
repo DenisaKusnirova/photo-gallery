@@ -26,7 +26,7 @@ class Photo extends Component {
     const opacity = this.state.visible ? 1 : 0
     return (
       <div className="delete-button" style={{ opacity }}>
-        <button onClick={() => this.props.handleDeletePhoto(this.props.path)}>X DELETE</button>
+        <button onClick={() => this.props.handleDeletePhoto(this.props.path, this.props.category)}>X DELETE</button>
       </div>
     )
   }

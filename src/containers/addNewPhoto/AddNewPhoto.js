@@ -41,7 +41,7 @@ class AddNewPhoto extends Component {
               onClick={() => {
                 this.state.accepted.map((image) => {
                   this.props.handleClose()
-                  this.props.handleAddPhoto(image, this.props.path)
+                  this.props.handleAddPhoto(image, this.props.path, this.props.category)
                 })
               }}
               className="submit-btn">+ SAVE</button>

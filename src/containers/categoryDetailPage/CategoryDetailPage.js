@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 import './categoryDetailPage.scss'
 import { connect } from 'react-redux'
 import Photo from '../photo/Photo'
-import AddPhotoCard from '../addPhotoCard/AddPhotoCard'
-import Headers from '../headers/Headers'
+import AddPhotoCard from '../../components/addPhotoCard/AddPhotoCard'
+import Headers from '../../components/headers/Headers'
 import AddNewPhoto from '../../containers/addNewPhoto/AddNewPhoto'
-import PhotoDetail from '../photoDetail/PhotoDetail'
+import PhotoDetail from '../../components/photoDetail/PhotoDetail'
 import { handleGetPhotosForGallery } from '../../actions/images'
 import { getImgUrl } from '../../api'
 
@@ -48,9 +48,9 @@ class CategoryDetailPage extends Component {
   }
 
   getBackgroundImg = () => {
-    const { images } = this.props.data
-    if (images && images.length !== 0) {
-      return <img src={getImgUrl(images[0].fullpath)} className="bcg-image" alt="background" />
+    const { images, path } = this.props
+    if (images[path] && images[path].length !== 0) {
+      return <img src={getImgUrl(images[path][0].fullpath)} className="bcg-image" alt="background" />
     }
     return <div className="no-bcg-image"></div>
   }
@@ -102,7 +102,7 @@ class CategoryDetailPage extends Component {
   }
 
   renderNextPhoto = () => {
-    if (this.state.currentIndex < this.props.data.images.length - 1) {
+    if (this.state.currentIndex < this.props.images[this.props.path].length - 1) {
       this.setState((prevState) => ({
         currentIndex: prevState.currentIndex + 1
       }))
@@ -110,17 +110,18 @@ class CategoryDetailPage extends Component {
   }
 
   render() {
-    const { path, data } = this.props
+    const { path, images } = this.props
     const { currentIndex } = this.state
+    console.log('IMAGES:', images[path])
 
     return (
       <div>
-        {!this.state.closed && <AddNewPhoto path={path} handleClose={this.handleClose} />}
+        {!this.state.closed && <AddNewPhoto path={path} category={path} handleClose={this.handleClose} />}
         {!this.state.photoDetailClosed &&
           <PhotoDetail
             photoPath={
-              data.images[currentIndex] &&
-              getImgUrl(data.images[currentIndex].fullpath, 1200, 800)
+              images[path][currentIndex] &&
+              getImgUrl(images[path][currentIndex].fullpath, 1200, 800)
             }
             renderPrevious={this.renderPreviousPhoto}
             renderNext={this.renderNextPhoto}
@@ -132,8 +133,8 @@ class CategoryDetailPage extends Component {
           <Headers subheader={"← " + path.toUpperCase()} className="subheader-link" />
           <div className="gallery">
             <div className="gallery-flex">
-              {data.images && data.images.length > 0 &&
-                data.images.map((item, index) => {
+              {images[path] && images[path].length > 0 &&
+                images[path].map((item, index) => {
                   return (
                     <Photo
                       onClick={() => this.handleClick(index)}
@@ -159,7 +160,7 @@ const mapStateToProps = ({ images }, props) => {
 
   return {
     path,
-    data: images
+    images
   }
 }
 

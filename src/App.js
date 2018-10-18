@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import Homepage from './components/homepage/Homepage'
-import CategoryDetailPage from './components/categoryDetailPage/CategoryDetailPage'
+import Homepage from './containers/homepage/Homepage'
+import CategoryDetailPage from './containers/categoryDetailPage/CategoryDetailPage'
 
 const App = () => (
   <Router>

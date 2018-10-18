@@ -1,13 +1,19 @@
 import React, { Component } from 'react'
 import Categories from '../../containers/categories/Categories'
 import './homepage.scss'
-import Headers from '../headers/Headers'
+import Headers from '../../components/headers/Headers'
 import { connect } from 'react-redux'
 import { handleReceiveGalleries } from '../../actions/galleries'
+import {  handleGetPhotosForGallery } from '../../actions/images'
 
 class Homepage extends Component {
   componentDidMount() {
     this.props.handleReceiveGalleries()
+      .then(() => {
+        Object.keys(this.props.galleries).map((gallery) => {
+          this.props.handleGetPhotosForGallery(gallery)
+        })
+      })
   }
 
   render() {
@@ -23,4 +29,11 @@ class Homepage extends Component {
   }
 }
 
-export default connect(null, { handleReceiveGalleries })(Homepage)
+const mapStateToProps = ({ galleries }, { images }) => {
+  return {
+    galleries,
+    images
+  }
+}
+
+export default connect(mapStateToProps, { handleReceiveGalleries, handleGetPhotosForGallery })(Homepage)

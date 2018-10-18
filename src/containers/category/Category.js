@@ -31,6 +31,17 @@ class Category extends Component {
       </div>
     )
   }
+
+  showNumOfPics = () => {
+    const opacity = this.state.visible ? 1 : 0
+    const { images } = this.props
+
+    return (
+      <p style={{ opacity }}>
+        {images[this.props.path] ? images[this.props.path].length + ' photos' : 'No photos'}
+      </p>
+    )
+  }
   
   render() {
     return (
@@ -41,7 +52,12 @@ class Category extends Component {
               {src => <img src={src} alt="category" />}
             </ProgressiveImage>
           }
-          <p className="category-title">{this.props.category}</p>
+          <div className="category-title">
+            <p>{this.props.category}<br/>
+            {this.showNumOfPics()}
+            </p>
+            
+          </div>
         </Link>
         {this.renderDeleteButton()}
       </div>
@@ -49,4 +65,10 @@ class Category extends Component {
   }
 }
 
-export default connect(null, { handleDeleteCategory })(Category)
+const mapStateToProps = ({ images }) => {
+  return {
+    images
+  }
+}
+
+export default connect(mapStateToProps, { handleDeleteCategory })(Category)
