@@ -1,11 +1,11 @@
-const api = 'https://api.programator.sk/'
+const api = 'http://api.programator.sk/'
 
 const headers = {
   'Accept': 'application/json'
 }
 
 export const getAllGalleries = () => {
-  return fetch(`${api}/gallery`, { headers })
+  return fetch(`${api}gallery`, { headers })
     .then(res => res.json())
     .then(data => data.galleries)
 }

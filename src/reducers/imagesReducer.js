@@ -13,7 +13,7 @@ export const imagesReducer = (state = {}, action) => {
         ...action.photos
       }
     case GALLERY_IMAGES_LOADING:
-      return state
+      return {}
     case DELETE_PHOTO:
       return {
         ...state,

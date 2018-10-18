@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Categories from '../categories/Categories'
+import Categories from '../../containers/categories/Categories'
 import './homepage.scss'
 import Headers from '../headers/Headers'
 import { connect } from 'react-redux'

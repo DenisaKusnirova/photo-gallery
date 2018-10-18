@@ -4,7 +4,7 @@ import Category from '../category/Category'
 import { connect } from 'react-redux'
 import { getImgUrl } from '../../api'
 import AddNewCategory from '../addNewCategory/AddNewCategory'
-import AddCategoryCard from '../addCategoryCard/AddCategoryCard'
+import AddCategoryCard from '../../components/addCategoryCard/AddCategoryCard'
 
 class Categories extends Component {
   state = {

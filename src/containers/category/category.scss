@@ -6,6 +6,7 @@ $title-border:1.4px solid $light-gray;
   width: 17.17vw;
   margin-left: 2%;
   margin-bottom: 42px;
+  transition: transform .4s ease-in-out;
 
     @media only screen and (max-width: 1383px) {
       width: 31.3%;
@@ -31,7 +32,6 @@ $title-border:1.4px solid $light-gray;
 
 .card:hover {
   transform: translate(0, -10px);
-  transition: transform .4s ease-in-out;
   cursor: pointer;
 }
 
