@@ -34,7 +34,7 @@ export const deleteItem = (path) => {
 }
 
 export const getImgUrl = (path, width, height) => {
-  const size = width && height ? `${width}x${height}` : '240x150'
+  const size = width && height ? `${width}x${height}` : '262x215'
   return `${api}images/${size}/${path}`
 }
 

@@ -5,17 +5,22 @@ import placeholder from '../../resources/placeholder.png'
 
 const PhotoDetail = (props) => (
   <div className="photo-detail-container">
-    <div style={{ width: '90%' }}>
-      <div className="photo-detail-flexbox">
-        <button onClick={props.renderPrevious} className="nav-button">{"<"}</button>
-        <div className="white-container-photo">
-          <button onClick={props.handleCloseDetail} className="close-button">X CLOSE</button>
-          <ProgressiveImage src={props.photoPath} placeholder={placeholder}>
-            {src => <img src={src} alt="detail" className="photo-detail" />}
-          </ProgressiveImage>
-        </div>
-        <button onClick={props.renderNext} className="nav-button">></button>
+    <div className="inner-flexbox">
+      <button onClick={props.renderPrevious} className="nav-button">
+        <img className="photo-detail-arrow" src={require('../../resources/ic_prev.svg')} />
+      </button>
+      <div className="white-container-photo">
+        <button onClick={props.handleCloseDetail} className="close-button">
+          <img className="photo-detail-ic" src={require('../../resources/ic_close.svg')} />
+          &nbsp; CLOSE
+        </button>
+        <ProgressiveImage src={props.photoPath} placeholder={placeholder}>
+          {src => <img src={src} alt="detail" className="photo-detail" />}
+        </ProgressiveImage>
       </div>
+      <button onClick={props.renderNext} className="nav-button">
+        <img className="photo-detail-arrow" src={require('../../resources/ic_next.svg')} />
+      </button>
     </div>
   </div>
 )

@@ -46,16 +46,22 @@ class AddNewCategory extends Component {
     return (
       <div className="add-category-container">
         <div>
-          <button onClick={this.props.handleClose} className="close-btn">X ZAVRIEŤ</button>
+          <button onClick={this.props.handleClose} className="close-button">
+            <img className="ic-close" src={require('../../resources/ic_close.svg')} />
+            CLOSE
+          </button>
           <div className="add-category-white-card">
-            <h4>PRIDAŤ KATEGÓRIU</h4>
+            <h4>ADD NEW CATEGORY</h4>
             <form onSubmit={this.onFormSubmit}>
               <input
-                placeholder="ZADAJTE NÁZOV KATEGÓRIE"
+                placeholder="Enter a new category name"
                 value={this.state.category}
                 onChange={this.handleChange}
               />
-              <button type="submit" className="add-category-btn">+ PRIDAŤ</button>
+              <button type="submit" className="add-category-btn">
+                <img className="ic-add-category" src={require('../../resources/ic_button_add.svg')} />
+                SUBMIT
+              </button>
             </form>
             <hr className="hr-new-category" />
             {this.state.error && <p className="error-msg">{this.state.error}</p>}

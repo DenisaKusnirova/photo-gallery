@@ -5,11 +5,22 @@ import { connect } from 'react-redux'
 import { getImgUrl } from '../../api'
 import AddNewCategory from '../addNewCategory/AddNewCategory'
 import AddCategoryCard from '../../components/addCategoryCard/AddCategoryCard'
+import Grid from '@material-ui/core/Grid'
 
 class Categories extends Component {
   state = {
     closed: true,
     currentBackground: ''
+  }
+
+  closeDetail = (e) => {
+    if (e.keyCode === 27) {
+      this.handleClose()
+    }
+  }
+
+  componentDidMount() {
+    document.addEventListener("keydown", this.closeDetail)
   }
 
   addNewCategory = () => {
@@ -42,7 +53,7 @@ class Categories extends Component {
   }
 
   render() {
-    const { galleries } = this.props  
+    const { galleries } = this.props
 
     if (!this.state.currentBackground && Object.keys(this.props.galleries).length !== 0) {
       const key = Object.keys(this.props.galleries)[0]
@@ -54,19 +65,19 @@ class Categories extends Component {
         <div className="bcg-image-wrapper">
           <img
             src={getImgUrl(this.state.currentBackground, 1200, 800)}
-            style={{ backgroundColor: '#7b7b7b'}}
+            style={{ backgroundColor: '#7b7b7b' }}
             className="bcg-image"
             alt="background"
           />
         </div>
-        <div className="gallery-flex">
-          {!this.state.closed &&
-            <AddNewCategory
-              onFormSubmit={this.addNewCategory}
-              handleClose={this.handleClose} />
-          }
-          {Object.keys(galleries).map((gallery) => {
-            return (
+        {!this.state.closed &&
+          <AddNewCategory
+            onFormSubmit={this.addNewCategory}
+            handleClose={this.handleClose} />
+        }
+        <Grid container spacing={24}>
+          {Object.keys(galleries).map((gallery) => (
+            <Grid item xs={12} sm={6} md={4} lg={3}>
               <Category
                 onMouseEnter={() => this.setBackground(gallery)}
                 key={gallery}
@@ -75,10 +86,13 @@ class Categories extends Component {
                 path={gallery}
                 name={galleries[gallery].path}
               />
-            )
-          })}
-          <AddCategoryCard openForm={this.handleOpen} />
-        </div>
+            </Grid>
+          )
+          )}
+          <Grid item xs={12} sm={6} md={4} lg={3}>
+            <AddCategoryCard openForm={this.handleOpen} />
+          </Grid>
+        </Grid>
       </div>
     )
   }

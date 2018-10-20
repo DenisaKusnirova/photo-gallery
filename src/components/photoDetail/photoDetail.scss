@@ -15,27 +15,32 @@
 
 .photo-detail-flexbox {
   display: flex;
-	flex-direction: row;
-	justify-content: center;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding: 20px;
-  padding-top: 0;
+}
+
+.inner-flexbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: -32px;
 }
 
 .close-button {
   background-color: transparent;
   border: none;
   color: white;
-  font-size: 16px;
-  text-align: right;
+  font-size: 14px;
   width: 100%;
+  text-align: right;
+  height: 50px;
+  padding: 0;
 }
 
 .nav-button {
   background-color: transparent;
-  font-size: 30px;
-  font-weight: 400;
-  color: white;
   border: none;
 }
 
@@ -51,4 +56,13 @@
 
 .photo-detail {
   width: 100%
+}
+
+.photo-detail-ic {
+  width: 20px;
+}
+
+.photo-detail-arrow {
+  width: 14px;
+  margin-top: 100px;
 }

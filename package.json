@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^3.2.2",
     "node-sass": "^4.9.3",
     "normalize.css": "^8.0.0",
     "react": "^16.5.2",
+    "react-aspect-ratio": "^1.0.31",
     "react-dom": "^16.5.2",
     "react-dropzone": "^6.0.2",
     "react-progressive-image": "^0.6.0",

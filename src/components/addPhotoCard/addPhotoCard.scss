@@ -3,43 +3,27 @@
 }
 
 .card-add-photo {
-  width: 17.17vw;
-  height: 110%;
-  padding: 0.6%;
-  margin-left: 2%;
+  transition: transform .4s ease-in-out;
   border: 1.4px solid #d3d3d385;
   cursor: pointer;
   border-radius: 4px;
   background-color: white;
+  align-items: center;
+  color: #aaaaaa;
+  font-weight: 600;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-
-    @media only screen and (max-width: 1383px) {
-      width: 31.3%;
-    }
-
-    @media only screen and (max-width: 900px) {
-      width: 31.3%;
-    }
-
-    @media only screen and (max-width: 760px) {
-      width: 48%;
-      padding: 1%;
-    }
-
-    @media only screen and (max-width: 552px) {
-      width: 98%;
-    }
+  line-height: 12px;
 
     img {
-      width: 100%;
-      background-position: center;
+      width: 46px;
+      margin-bottom: 18px;
     }
 }
 
 .card-add-photo:hover {
   transform: translate(0, -10px);
-  transition: transform .4s ease-in-out;
   cursor: pointer;
 }

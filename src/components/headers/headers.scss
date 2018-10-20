@@ -1,20 +1,11 @@
 .headers {
-    padding-top: 4%;
+    padding-top: 9.63%;
     color: white;
     opacity: 0.8;
     text-align: left;
   
     h4 {
-      padding-top: 1.4%;
-      font-size: 1.4vw;
-
-      @media only screen and (max-width: 1000px) {
-        font-size: 2.6vw;
-      }
-
-      @media only screen and (max-width: 700px) {
-        font-size: 3.6vw;
-      }
+      padding-top: 4.07%;
 
       Link {
         text-decoration: none;
@@ -22,20 +13,6 @@
         opacity: 0.8;
       }
     }
-
-    h3 {
-      font-size: 1.8vw;
-
-      @media only screen and (max-width: 1000px) {
-        font-size: 3.2vw;
-      }
-
-      @media only screen and (max-width: 700px) {
-        font-size: 4.2vw;
-      }
-
-    }
-
     h4:hover {
       text-decoration: underline;
     }

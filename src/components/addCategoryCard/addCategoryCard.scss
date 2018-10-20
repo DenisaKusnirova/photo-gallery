@@ -1,38 +1,24 @@
 .card-add-category {
-  width: 17.17vw;
-  height: 84%;
-  padding: 0.8%;
-  margin-left: 2%;
-  margin-bottom: 42px;
+  transition: transform .4s ease-in-out;
   border: 1.4px solid #d3d3d385;
   cursor: pointer;
   border-radius: 4px;
   background-color: white;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: #aaaaaa;
+  font-weight: 600;
+  line-height: 12px;
+}
 
-    @media only screen and (max-width: 1383px) {
-      width: 31.3%;
-      padding: 0.65%;
-    }
+.card-add-category:hover {
+  transform: translate(0, -10px);
+  cursor: pointer;
+}
 
-    @media only screen and (max-width: 1000px) {
-      width: 48%;
-      padding: 0;
-    }
-
-    @media only screen and (max-width: 650px) {
-      width: 98%;
-    }
-
-    img {
-      width: 98%;
-      background-position: center;
-    }
-
-    &:hover {
-      transform: translate(0, -10px);
-      transition: transform .4s ease-in-out;
-    }
+.plus-ic {
+  height: 40px;
+  margin-bottom: 18px;
 }
