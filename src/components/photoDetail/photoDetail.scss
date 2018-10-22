@@ -13,19 +13,11 @@
   position: fixed;
 }
 
-.photo-detail-flexbox {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.inner-flexbox {
+.flexbox-photo-detail {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: -32px;
 }
 
 .close-button {
@@ -33,10 +25,17 @@
   border: none;
   color: white;
   font-size: 14px;
-  width: 100%;
+  width: 600px;
   text-align: right;
-  height: 50px;
-  padding: 0;
+  padding-bottom: 4px;
+
+  @media (max-width: 674px) {
+    width: 500px;
+  }
+
+  @media (max-width: 574px) {
+    width: 80vw;
+  }
 }
 
 .nav-button {
@@ -45,13 +44,14 @@
 }
 
 .white-container-photo {
-	max-width: 600px;
-  max-height: 400px;
-  min-width: 300px;
-	min-height: 100px;
+	width: 600px;
   margin: 12px;
   background-size: cover;
   background-position: center;
+
+  @media (max-width: 674px) {
+    width: 80vw;
+  }
 }
 
 .photo-detail {
@@ -64,5 +64,4 @@
 
 .photo-detail-arrow {
   width: 14px;
-  margin-top: 100px;
 }

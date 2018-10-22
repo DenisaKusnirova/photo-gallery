@@ -50,7 +50,7 @@ class AddNewCategory extends Component {
             <img className="ic-close" src={require('../../resources/ic_close.svg')} alt="ic_close" />
             CLOSE
           </button>
-          <div className="add-category-white-card">
+          <div className="add-white-card">
             <h4>ADD NEW CATEGORY</h4>
             <form onSubmit={this.onFormSubmit}>
               <input
