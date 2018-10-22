@@ -4,14 +4,14 @@ import './homepage.scss'
 import Headers from '../../components/headers/Headers'
 import { connect } from 'react-redux'
 import { handleReceiveGalleries } from '../../actions/galleries'
-import {  handleGetPhotosForGallery } from '../../actions/images'
+import { handleGetPhotosForGallery } from '../../actions/images'
 
 class Homepage extends Component {
   componentDidMount() {
     this.props.handleReceiveGalleries()
       .then(() => {
         Object.keys(this.props.galleries).map((gallery) => {
-          this.props.handleGetPhotosForGallery(gallery)
+          return this.props.handleGetPhotosForGallery(gallery)
         })
       })
   }

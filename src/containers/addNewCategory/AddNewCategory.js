@@ -47,7 +47,7 @@ class AddNewCategory extends Component {
       <div className="add-category-container">
         <div>
           <button onClick={this.props.handleClose} className="close-button">
-            <img className="ic-close" src={require('../../resources/ic_close.svg')} />
+            <img className="ic-close" src={require('../../resources/ic_close.svg')} alt="ic_close" />
             CLOSE
           </button>
           <div className="add-category-white-card">
@@ -59,7 +59,7 @@ class AddNewCategory extends Component {
                 onChange={this.handleChange}
               />
               <button type="submit" className="add-category-btn">
-                <img className="ic-add-category" src={require('../../resources/ic_button_add.svg')} />
+                <img className="ic-add-category" src={require('../../resources/ic_button_add.svg')} alt="ic_button_add" />
                 SUBMIT
               </button>
             </form>

@@ -36,7 +36,7 @@ export const deleteItem = (path) => {
 export const getImgUrl = (path, width, height) => {
   const size = width && height ? `${width}x${height}` : '262x215'
   return `${api}images/${size}/${path}`
-}
+} 
 
 export const addNewPhoto = (image, path) => {
   const formData = new FormData();

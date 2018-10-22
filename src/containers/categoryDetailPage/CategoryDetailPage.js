@@ -8,7 +8,6 @@ import AddNewPhoto from '../../containers/addNewPhoto/AddNewPhoto'
 import PhotoDetail from '../../components/photoDetail/PhotoDetail'
 import { handleGetPhotosForGallery } from '../../actions/images'
 import { getImgUrl } from '../../api'
-import AddCategoryCard from '../../components/addCategoryCard/AddCategoryCard'
 import Grid from '@material-ui/core/Grid'
 
 class CategoryDetailPage extends Component {
@@ -124,18 +123,20 @@ class CategoryDetailPage extends Component {
             handleCloseDetail={this.handleCloseDetail}
           />
         }
-        {this.getBackgroundImg()}
+        <div className="bcg-image-wrapper">
+          {this.getBackgroundImg()}
+        </div>
         <div className="homepage-container">
           <Headers 
-            subheader={<img className="ic-back" src={require('../../resources/ic_back.svg')} /> 
-            + path.toUpperCase()} className="subheader-link" 
+            image={<img src={require('../../resources/ic_back.svg')} alt="ic_back" className="ic_back"/>}
+            subheader={path.toUpperCase()} className="subheader-link" 
           />
           <div className="gallery">
             <div className="gallery-flex">
               <Grid container spacing={24}>
                 {images[path] && images[path].length > 0 &&
                   images[path].map((item, index) => (
-                    <Grid item xs={12} sm={6} md={4} lg={3}>
+                    <Grid item xs={12} sm={6} md={4} lg={3} key={item.path}>
                       <Photo
                         onClick={() => this.handleClick(index)}
                         src={getImgUrl(item.fullpath)}

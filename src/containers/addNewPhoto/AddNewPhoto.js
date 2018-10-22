@@ -14,7 +14,7 @@ class AddNewPhoto extends Component {
       <div className="add-new-photo-container">
         <div>
           <button onClick={this.props.handleClose} className="close-button">
-            <img className="ic-close" src={require('../../resources/ic_close.svg')} />
+            <img className="ic-close" src={require('../../resources/ic_close.svg')} alt="ic_close" />
             CLOSE
           </button>
           <div className="add-category-white-card">
@@ -25,7 +25,7 @@ class AddNewPhoto extends Component {
                 accept="image/jpeg"
                 onDrop={(accepted, rejected) => { this.setState({ accepted, rejected }); }}
               >
-                <img src={require('../../resources/ic_add_photo.svg')} alt="camera" className="camera-img"/>
+                <img src={require('../../resources/ic_add_photo.svg')} alt="ic_camera" className="camera-img"/>
                 <p className="subheading">Drop some .jpeg images here to upload or</p>
                 <button className="choose-files-btn">SELECT IMAGES</button>
               </Dropzone>
@@ -48,7 +48,7 @@ class AddNewPhoto extends Component {
                 })
               }}
               className="submit-btn">
-                <img className="ic-add-category" src={require('../../resources/ic_button_add.svg')} />
+                <img className="ic-add-category" src={require('../../resources/ic_button_add.svg')} alt="ic_button_add" />
                 SAVE
             </button>
           </div>

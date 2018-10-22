@@ -36,7 +36,7 @@ class Photo extends Component {
     return (
       <AspectRatio ratio="1.2">
         <div className="card-photo" onMouseOver={this.showBtn} onMouseLeave={this.hideBtn}>
-        <div {...this.props}>
+        <div>
           {this.props.src &&
             <ProgressiveImage src={this.props.src} placeholder={placeholder}>
               {src => <img src={src} alt="gallery jpg" />}

@@ -29,20 +29,30 @@ class Category extends Component {
     const opacity = this.state.visible ? 1 : 0
     return (
       <div className="delete-button" style={{ opacity }}>
-        <button onClick={() => this.props.handleDeleteCategory(this.props.category)}>X DELETE</button>
+        <button onClick={() => this.props.handleDeleteCategory(this.props.category)}>
+          X DELETE
+        </button>
       </div>
     )
   }
 
   showNumOfPics = () => {
-    const visibility = this.state.visible ? 'visible' : 'hidden'
     const { images } = this.props
-
-    return (
-      <p style={{ visibility, color: '#aaaaaa' }} className="category-title">
-        {images[this.props.path] ? images[this.props.path].length + ' photos' : 'No photos'}
-      </p>
-    )
+    if (images[this.props.path] && images[this.props.path].length === 0) {
+      return (
+        <p style={{ color: '#aaaaaa' }} className="num-of-pics">No photos</p>
+      )
+    } else if (images[this.props.path] && images[this.props.path].length === 1) {
+      return (
+        <p style={{ color: '#aaaaaa' }} className="num-of-pics">1 photo</p>
+      )
+    } else if (images[this.props.path] && images[this.props.path].length > 1) {
+      return (
+        <p style={{ color: '#aaaaaa' }} className="num-of-pics">
+          {images[this.props.path].length + ' photos'}
+        </p>
+      )
+    }
   }
 
   render() {
@@ -56,8 +66,8 @@ class Category extends Component {
                   {src => <img src={src} alt="category" />}
                 </ProgressiveImage>
               }
-              <div className="card-title">
-                <p className="category-title">{this.props.category.toUpperCase()}</p>
+              <div className="card-footer">
+                <h4 className="category-title">{this.props.category.toUpperCase()}</h4>
                 {this.state.visible && this.showNumOfPics()}
               </div>
             </div>

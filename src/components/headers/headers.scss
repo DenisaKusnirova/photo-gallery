@@ -1,20 +1,19 @@
 .headers {
-    padding-top: 9.63%;
+    padding-top: 9%;
     color: white;
     opacity: 0.8;
     text-align: left;
   
     h4 {
-      padding-top: 4.07%;
+      padding-top: 3%;
+      display: flex;
+      align-items: center;
 
       Link {
         text-decoration: none;
         color: white;
         opacity: 0.8;
       }
-    }
-    h4:hover {
-      text-decoration: underline;
     }
   }
   
@@ -35,7 +34,7 @@
   }
   
   .subheader-link:hover {
-    text-decoration: none;
+    text-decoration: underline;
     color: white;
     opacity: 0.8;
   }

@@ -64,7 +64,7 @@ class Categories extends Component {
       <div>
         <div className="bcg-image-wrapper">
           <img
-            src={getImgUrl(this.state.currentBackground, 1200, 800)}
+            src={this.state.currentBackground && getImgUrl(this.state.currentBackground, 1200, 800)}
             style={{ backgroundColor: '#7b7b7b' }}
             className="bcg-image"
             alt="background"
@@ -77,10 +77,9 @@ class Categories extends Component {
         }
         <Grid container spacing={24}>
           {Object.keys(galleries).map((gallery) => (
-            <Grid item xs={12} sm={6} md={4} lg={3}>
+            <Grid item xs={12} sm={6} md={4} lg={3} key={gallery}>
               <Category
                 onMouseEnter={() => this.setBackground(gallery)}
-                key={gallery}
                 category={galleries[gallery].path}
                 src={getImgUrl(galleries[gallery].image && galleries[gallery].image.fullpath)}
                 path={gallery}

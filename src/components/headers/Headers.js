@@ -7,7 +7,7 @@ const Headers = (props) => (
     <div className="headers">
       <h3>PHOTO GALLERY</h3>
       <Link to="/" className={props.className}>
-        <h4>{props.subheader}</h4>
+        <h4>{props.image} {props.subheader}</h4>
       </Link>
     </div>
     <hr />
