@@ -6,6 +6,7 @@ import { getImgUrl } from '../../api'
 import AddNewCategory from '../addNewCategory/AddNewCategory'
 import AddCategoryCard from '../../components/addCategoryCard/AddCategoryCard'
 import Grid from '@material-ui/core/Grid'
+import placeholder from '../../resources/gallery_placeholder.png'
 
 class Categories extends Component {
   state = {
@@ -21,6 +22,13 @@ class Categories extends Component {
 
   componentDidMount() {
     document.addEventListener("keydown", this.closeDetail)
+  }
+
+  componentDidUpdate() {
+    if (!this.state.currentBackground && Object.keys(this.props.galleries).length !== 0) {
+      const key = Object.keys(this.props.galleries)[0]
+      this.setBackground(key)
+    }
   }
 
   addNewCategory = () => {
@@ -55,11 +63,6 @@ class Categories extends Component {
   render() {
     const { galleries } = this.props
 
-    if (!this.state.currentBackground && Object.keys(this.props.galleries).length !== 0) {
-      const key = Object.keys(this.props.galleries)[0]
-      this.setBackground(key)
-    }
-
     return (
       <div>
         <div className="bcg-image-wrapper">
@@ -81,7 +84,7 @@ class Categories extends Component {
               <Category
                 onMouseEnter={() => this.setBackground(gallery)}
                 category={galleries[gallery].path}
-                src={getImgUrl(galleries[gallery].image && galleries[gallery].image.fullpath)}
+                src={galleries[gallery].image ? getImgUrl(galleries[gallery].image.fullpath) : placeholder }
                 path={gallery}
                 name={galleries[gallery].path}
               />

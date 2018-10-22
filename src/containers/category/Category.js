@@ -37,27 +37,26 @@ class Category extends Component {
   }
 
   showNumOfPics = () => {
-    const { images } = this.props
-    if (images[this.props.path] && images[this.props.path].length === 0) {
-      return (
-        <p style={{ color: '#aaaaaa' }} className="num-of-pics">No photos</p>
-      )
-    } else if (images[this.props.path] && images[this.props.path].length === 1) {
+    const images = this.props.images[this.props.path]
+
+    if (images && images.length === 1) {
       return (
         <p style={{ color: '#aaaaaa' }} className="num-of-pics">1 photo</p>
       )
-    } else if (images[this.props.path] && images[this.props.path].length > 1) {
+    } else if (images && images.length > 1) {
       return (
         <p style={{ color: '#aaaaaa' }} className="num-of-pics">
-          {images[this.props.path].length + ' photos'}
+          {images.length + ' photos'}
         </p>
       )
-    }
+    } else return (
+      <p style={{ color: '#aaaaaa' }} className="num-of-pics">No photos</p>
+    )
   }
 
   render() {
     return (
-      <div className="card-container" onMouseOver={this.showBtn} onMouseLeave={this.hideBtn} {...this.props}>
+      <div className="card-container" onMouseOver={this.showBtn} onMouseLeave={this.hideBtn} onMouseEnter={this.props.onMouseEnter}>
         <Link to={`/${this.props.path}/`} className="link-to-category">
           <AspectRatio ratio="1.2">
             <div className="card">

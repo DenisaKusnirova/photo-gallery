@@ -29,10 +29,9 @@ class Homepage extends Component {
   }
 }
 
-const mapStateToProps = ({ galleries }, { images }) => {
+const mapStateToProps = ({ galleries }) => {
   return {
     galleries,
-    images
   }
 }
 
